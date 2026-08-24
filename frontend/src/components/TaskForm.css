@@ -1,0 +1,71 @@
+.task-form-card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.task-form-card h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+.task-form-card label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.task-form-card input,
+.task-form-card textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 12px;
+  margin-bottom: 17px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+}
+
+.task-form-card input:focus,
+.task-form-card textarea:focus {
+  border-color: #2563eb;
+}
+
+.task-form-card textarea {
+  resize: vertical;
+}
+
+.primary-button,
+.cancel-button {
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary-button {
+  background: #2563eb;
+  color: white;
+}
+
+.primary-button:hover {
+  background: #1d4ed8;
+}
+
+.cancel-button {
+  margin-top: 10px;
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.cancel-button:hover {
+  background: #d1d5db;
+}

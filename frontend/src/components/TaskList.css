@@ -1,0 +1,35 @@
+.task-list-card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.task-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.task-list-header h2 {
+  margin: 0;
+  color: #111827;
+}
+
+.task-list-header span {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.empty-message {
+  padding: 40px 20px;
+  text-align: center;
+  color: #6b7280;
+}
