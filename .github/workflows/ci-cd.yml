@@ -44,3 +44,5 @@ jobs:
           context: ./frontend
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/taskflow-frontend:latest
+
+          # triggering pipeline
