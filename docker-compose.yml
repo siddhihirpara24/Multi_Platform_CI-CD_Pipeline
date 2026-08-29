@@ -1,16 +1,17 @@
 services:
-  mysql:
-    image: mysql:8.0
-    container_name: taskflow-mysql
+  postgres:
+    image: postgres:15
+    container_name: taskflow-postgres
     ports:
-      - "3307:3306"
+      - "5432:5432"
     environment:
-      - MYSQL_DATABASE=taskflow
-      - MYSQL_ROOT_PASSWORD=root
+      - POSTGRES_DB=flowtask_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Siddhi24
     volumes:
-      - mysql-data:/var/lib/mysql
+      - postgres-data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d flowtask_db"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -23,11 +24,11 @@ services:
     ports:
       - "8081:8080"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/taskflow?createDatabaseIfNotExist=true
-      - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=root
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/flowtask_db
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=Siddhi24
     depends_on:
-      mysql:
+      postgres:
         condition: service_healthy
     networks:
       - taskflow-network
@@ -43,7 +44,7 @@ services:
       - taskflow-network
 
 volumes:
-  mysql-data:
+  postgres-data:
 
 networks:
   taskflow-network:
